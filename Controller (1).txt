@@ -1,0 +1,83 @@
+<?php 
+
+namespace App\Controllers;
+
+class Page extends BaseController
+{
+
+    public function index() 
+    {
+
+        return view('page');
+
+    }
+
+    public function displayStudentSection($student, $section)
+    {
+
+        echo $student;
+        echo "<br>";
+        echo $section;
+
+    }
+
+    public function Operations($operation, $num_1, $num_2) 
+	{
+
+        if($operation === 'addition'){
+            $a = $num_1 + $num_2;
+            // $b = array($a);
+            // print_r($b);
+
+            $b = var_dump($a);
+            echo $b;
+        }
+	elseif($operation === 'subtraction'){
+            $a = $num_1 - $num_2;
+            $b = var_dump($a);
+            echo $b;
+        }
+	elseif($operation === 'multiplication'){
+            $a = $num_1 * $num_2;
+            $b = var_dump($a);
+            echo $b;
+        }
+	elseif($operation === 'division'){
+            $a = $num_1 / $num_2;
+            $b = var_dump($a);
+            echo $b;
+        }
+
+    	}
+
+    public function sexAndage($sex, $age)
+	   {
+
+        if($sex === 'm'){
+
+            echo "<p>You Are Male</p>";
+
+            if($age >= 18){
+                echo "And You Are Legal Age";
+            }else{
+                echo "And You Are Minor Age";
+            }
+
+        }elseif($sex === 'f'){
+
+            echo "<p>Your Are Female</p>";
+
+            if($age >= 18)
+		{
+                echo "And You Are Legal Age";
+            	}
+		else
+	    	{
+                echo "And You Are Minor Age";
+            	}
+
+       	    }
+
+    }
+
+}

@@ -1,0 +1,21 @@
+/*
+ * --------------------------------------------------------------------
+ * Route Definitions
+ * --------------------------------------------------------------------
+ */
+
+// We get a performance increase by specifying the default
+// route since we don't have to scan directories.
+$routes->get('/', 'Home::index');
+
+$routes->get('page','Page::index');
+
+$routes->get('student/(:alpha)/(:alphanum)', 
+'Page::displayStudentSection/$1/$2');
+
+$routes->get('operation/(:alpha)/(:num)/(:num)',
+'Page::Operations/$1/$2/$3');
+
+$routes->get('determine/(:alpha)/(:num)', 
+'Page::sexAndage/$1/$2');
+
